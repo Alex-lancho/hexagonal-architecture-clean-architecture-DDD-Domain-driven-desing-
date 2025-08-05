@@ -22,34 +22,74 @@ Permite gestionar estudiantes y sus cursos mediante un diseño limpio, escalable
 
 ```bash
 src/
-├── main.ts                  # Punto de entrada de la aplicación
-├── app.module.ts           # Módulo raíz
+├── main.ts                         # Punto de entrada de NestJS
+├── app.module.ts                  # Módulo raíz global
 │
-├── config/                 # Configuración global de Prisma y entorno
+├── config/                         # Configuración global
+│   ├── config.module.ts
+│   ├── env.config.ts
 │   └── prisma/
+│       ├── prisma.config.ts
 │       ├── prisma.module.ts
 │       └── prisma.service.ts
 │
-├── shared/                 # Código genérico reutilizable
-│   ├── domain/             # Entidades y contratos genéricos
-│   ├── application/        # Interfaces de casos de uso
-│   ├── infrastructure/     # Logger, HTTP, auth, etc.
-│   └── utils/              # Validadores, interceptores, excepciones
+├── shared/                           # Núcleo compartido de la app
+│   ├── domain/                     # Elementos del dominio genérico
+│   │   ├── entities/
+│   │   │   └── base.entity.ts
+│   │   ├── value-objects/
+│   │   │   └── email.vo.ts
+│   │   └── interfaces/
+│   │       └── repository.interface.ts
+│   │
+│   ├── application/                # Interfaces y contratos globales
+│   │   └── use-case.interface.ts
+│   │
+│   ├── infrastructure/             # Infraestructura genérica (logger, auth, etc.)
+│   │   ├── http/
+|   │   ├── logger/
+│   │   ├── auth/
+│   │
+│   └── utils/                      # Utilidades globales
+│       ├── interceptors/
+│       ├── exceptions/
+│       └── validators/
 │
-├── modules/
-    ├── student/            # Módulo de Estudiantes
-    │   ├── domain/         # Entidad Student, repositorio, value-objects
-    │   ├── application/    # Casos de uso: create, update, delete, etc.
-    │   ├── infrastructure/ # Controladores y repositorio Prisma
-    │   ├── interfaces/dto/ # DTOs de entrada y validación
-    │   └── student.module.ts
-    │
-    └── course/             # Módulo de Cursos
-        ├── domain/
-        ├── application/
-        ├── infrastructure/
-        ├── interfaces/dto/
-        └── course.module.ts
+├── modules/                        # Módulos del dominio (bounded contexts)
+│   ├── student/
+│   │   ├── domain/
+│   │   │   ├── entities/
+│   │   │   │   └── student.entity.ts
+│   │   │   ├── value-objects/
+│   │   │   │   └── dni.vo.ts
+│   │   │   └── repositories/
+│   │   │       └── student.repository.ts
+│   │   │
+│   │   ├── application/
+│   │   │   ├── use-cases/
+│   │   │   │   ├── create-estudiante.usecase.ts
+│   │   │   │   └── find-estudiante.usecase.ts
+│   │   │   └── services/
+│   │   │       └── estudiante.service.ts
+│   │   │
+│   │   ├── infrastructure/
+│   │   │   ├── controllers/
+│   │   │   │   └── student.controller.ts
+│   │   │   └── persistence/
+│   │   │       └── student.prisma.repository.ts
+│   │   │
+│   │   ├── interfaces/             # DTOs y tipos expuestos externamente
+│   │   │   └── dto/
+│   │   │       └── create-student.dto.ts
+│   │   │
+│   │   └── student.module.ts
+│   │
+│   └── course/                      # Otro módulo de dominio
+│       ├── domain/
+│       ├── application/
+│       ├── infrastructure/
+│       ├── interfaces/
+│       └── course.module.ts
 ```
 🧠 Explicación de cada capa de la arquitectura
 Capa	Rol principal
