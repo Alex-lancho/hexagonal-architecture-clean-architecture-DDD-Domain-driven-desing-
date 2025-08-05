@@ -1,4 +1,4 @@
-cat << 'EOF' > README.md
+
 # 📚 API de Estudiantes y Cursos – NestJS + Prisma + Arquitectura Hexagonal + DDD
 
 Este proyecto implementa una API REST moderna utilizando **NestJS** y **Prisma ORM (MySQL)** siguiendo los principios de **Domain-Driven Design (DDD)**, **Arquitectura Hexagonal** y **Clean Architecture**.
