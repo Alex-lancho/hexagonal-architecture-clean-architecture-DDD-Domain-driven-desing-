@@ -50,7 +50,7 @@ src/
         ├── infrastructure/
         ├── interfaces/dto/
         └── course.module.ts
-
+```
 🧠 Explicación de cada capa de la arquitectura
 Capa	Rol principal
 Domain	Define las entidades del negocio (Student, Course), value-objects y contratos
