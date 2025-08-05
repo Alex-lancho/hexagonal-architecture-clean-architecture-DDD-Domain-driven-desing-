@@ -55,41 +55,41 @@ src/
 │       ├── exceptions/
 │       └── validators/
 │
-├── modules/                        # Módulos del dominio (bounded contexts)
-│   ├── student/
-│   │   ├── domain/
-│   │   │   ├── entities/
-│   │   │   │   └── student.entity.ts
-│   │   │   ├── value-objects/
-│   │   │   │   └── dni.vo.ts
-│   │   │   └── repositories/
-│   │   │       └── student.repository.ts
-│   │   │
-│   │   ├── application/
-│   │   │   ├── use-cases/
-│   │   │   │   ├── create-estudiante.usecase.ts
-│   │   │   │   └── find-estudiante.usecase.ts
-│   │   │   └── services/
-│   │   │       └── estudiante.service.ts
-│   │   │
-│   │   ├── infrastructure/
-│   │   │   ├── controllers/
-│   │   │   │   └── student.controller.ts
-│   │   │   └── persistence/
-│   │   │       └── student.prisma.repository.ts
-│   │   │
-│   │   ├── interfaces/             # DTOs y tipos expuestos externamente
-│   │   │   └── dto/
-│   │   │       └── create-student.dto.ts
-│   │   │
-│   │   └── student.module.ts
-│   │
-│   └── course/                      # Otro módulo de dominio
-│       ├── domain/
-│       ├── application/
-│       ├── infrastructure/
-│       ├── interfaces/
-│       └── course.module.ts
+└──  modules/                        # Módulos del dominio (bounded contexts)
+    ├── student/
+    │   ├── domain/
+    │   │   ├── entities/
+    │   │   │   └── student.entity.ts
+    │   │   ├── value-objects/
+    │   │   │   └── dni.vo.ts
+    │   │   └── repositories/
+    │   │       └── student.repository.ts
+    │   │
+    │   ├── application/
+    │   │   ├── use-cases/
+    │   │   │   ├── create-estudiante.usecase.ts
+    │   │   │   └── find-estudiante.usecase.ts
+    │   │   └── services/
+    │   │       └── estudiante.service.ts
+    │   │
+    │   ├── infrastructure/
+    │   │   ├── controllers/
+    │   │   │   └── student.controller.ts
+    │   │   └── persistence/
+    │   │       └── student.prisma.repository.ts
+    │   │
+    │   ├── interfaces/             # DTOs y tipos expuestos externamente
+    │   │   └── dto/
+    │   │       └── create-student.dto.ts
+    │   │
+    │   └── student.module.ts
+    │
+    └── course/                      # Otro módulo de dominio
+        ├── domain/
+        ├── application/
+        ├── infrastructure/
+        ├── interfaces/
+        └── course.module.ts
 ```
 🧠 Explicación de cada capa de la arquitectura
 Capa	Rol principal
