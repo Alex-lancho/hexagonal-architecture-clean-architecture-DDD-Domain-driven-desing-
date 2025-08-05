@@ -64,7 +64,7 @@ Cada módulo tiene su propia estructura vertical siguiendo el patrón de Bounded
 🧩 Modelo de Base de Datos
 prisma
 ```bash
-Edit
+
 model Estudiante {
   id        String   @id @default(uuid())
   nombre    String
@@ -83,9 +83,7 @@ model Curso {
 }
 ```
 📦 Instalación y configuración
-bash
 
-Edit
 # Clonar el proyecto
 ```bash
 git clone https://github.com/Alex-lancho/hexagonal-architecture-clean-architecture-DDD-Domain-driven-desing-.git
