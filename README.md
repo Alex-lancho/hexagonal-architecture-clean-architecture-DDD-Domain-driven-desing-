@@ -63,7 +63,7 @@ Cada módulo tiene su propia estructura vertical siguiendo el patrón de Bounded
 
 🧩 Modelo de Base de Datos
 prisma
-Copy
+```bash
 Edit
 model Estudiante {
   id        String   @id @default(uuid())
@@ -81,12 +81,14 @@ model Curso {
   estudiante   Estudiante @relation(fields: [estudianteId], references: [id])
   estudianteId String
 }
+```
 📦 Instalación y configuración
 bash
-Copy
+
 Edit
 # Clonar el proyecto
-git clone https://github.com/tu_usuario/tu_proyecto.git
+```bash
+git clone https://github.com/Alex-lancho/hexagonal-architecture-clean-architecture-DDD-Domain-driven-desing-.git
 cd tu_proyecto
 
 # Instalar dependencias
@@ -106,15 +108,17 @@ npx prisma generate
 
 # Iniciar servidor de desarrollo
 npm run start:dev
+
+```
 🔄 Endpoints disponibles
 Estudiantes
 Método	Ruta	Descripción
-GET	/students	Listar todos los estudiantes con sus cursos
-GET	/students/:id	Obtener un estudiante por ID
-POST	/students	Crear estudiante sin cursos
-POST	/students/with-courses	Crear estudiante junto con cursos
-PUT	/students/:id	Actualizar estudiante por ID
-DELETE	/students/:id	Eliminar estudiante
+## GET	/students	Listar todos los estudiantes con sus cursos
+## GET	/students/:id	Obtener un estudiante por ID
+## POST	/students	Crear estudiante sin cursos
+## POST	/students/with-courses	Crear estudiante junto con cursos
+## PUT	/students/:id	Actualizar estudiante por ID
+## DELETE	/students/:id	Eliminar estudiante
 
 Cursos
 Método	Ruta	Descripción
